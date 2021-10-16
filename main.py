@@ -25,7 +25,7 @@ def process_data(df):
     # get items with many data points
     valid_items_df = df.groupby(by="itemDescription").count().sort_values(by="Date")
     valid_items_df = valid_items_df.drop(valid_items_df[valid_items_df.Date < 5000].index)
-    
+
     # forecast for each item
     for item in valid_items_df.index:
         temp_df = df[df.itemDescription == item] # get df for each item
@@ -35,7 +35,8 @@ def process_data(df):
         print(temp_df)
 
         # forecast item using forecast function implemented
-        forecast(temp_df, item)
+        pred = forecast(temp_df, item)
+        save_forecast(pred, item)
 
 def forecast(my_data, food_label):
     from statsmodels.tsa.arima.model import ARIMA
@@ -46,15 +47,12 @@ def forecast(my_data, food_label):
     # q (order of moving-average model)
     model = ARIMA(my_data, order=(7, 0, 7))
     results_ARIMA = model.fit()
-        
-    # predictions_ARIMA_diff = pd.Series(results_ARIMA.fittedvalues, copy=True)
-    # print(predictions_ARIMA_diff.tail())
 
     # forecast results
     x = results_ARIMA.forecast(steps=30)
     x.index = np.arange(1, len(x.index) + 1)
     print(x)
-
+    
     # plot graph
     plt.plot(x)
     plt.title(food_label)
@@ -69,7 +67,14 @@ def forecast(my_data, food_label):
     plt.clf()
     plt.cla()
     plt.close()
-
-    return x
     
+    return x
+
+def save_forecast(forecast, label):
+    data = [pred for pred in forecast.values]
+        
+    with open("src/data.js", "a") as f:
+        f.write(f"const {label.replace(' ', '_')} = {{data: {data}}}\n")
+
+
 main()
