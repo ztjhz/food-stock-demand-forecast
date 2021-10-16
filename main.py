@@ -48,7 +48,10 @@ def plot(temp_df):
 def forecast(my_data, food_label):
     from statsmodels.tsa.arima.model import ARIMA
 
-    # AR MODEL
+    # ARIMA MODEL after considering
+    # p (order of autoregressive model)
+    # d (degree of differencing)
+    # q (order of moving-average model)
     model = ARIMA(my_data, order=(7, 0, 7))
     results_ARIMA = model.fit()
 
@@ -56,12 +59,15 @@ def forecast(my_data, food_label):
     # plt.plot(results_ARIMA.fittedvalues, color='red')
     # plt.show()
         
-    predictions_ARIMA_diff = pd.Series(results_ARIMA.fittedvalues, copy=True)
-    print(predictions_ARIMA_diff.tail())
+    # predictions_ARIMA_diff = pd.Series(results_ARIMA.fittedvalues, copy=True)
+    # print(predictions_ARIMA_diff.tail())
 
+    # forecast results
     x = results_ARIMA.forecast(steps=30)
     x.index = np.arange(1, len(x.index) + 1)
     print(x)
+
+    # plot graph
     plt.plot(x)
     plt.title(food_label)
     plt.xlabel("Days Into The Future")
