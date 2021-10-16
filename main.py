@@ -2,8 +2,6 @@
 import numpy as np # library to handle data in a vectorized manner
 import pandas as pd # library for data analsysis
 import matplotlib.pyplot as plt
-import datetime
-
 
 def main():
     df = load_data_set()
@@ -23,7 +21,6 @@ def load_data_set():
 def process_data(df):
     # sort df by date and drop unused columns
     df = df.drop(columns=['Member_number'], axis=1)
-    
    
     # get items with many data points
     valid_items_df = df.groupby(by="itemDescription").count().sort_values(by="Date")
@@ -39,13 +36,6 @@ def process_data(df):
 
         # forecast item using forecast function implemented
         forecast(temp_df, item)
-
-def plot(temp_df):
-    plt.figure(figsize=(16,8))
-    plt.clf()
-    plt.plot(temp_df['itemDescription'])
-    plt.show()
-
 
 def forecast(my_data, food_label):
     from statsmodels.tsa.arima.model import ARIMA
@@ -82,5 +72,4 @@ def forecast(my_data, food_label):
 
     return x
     
-
 main()
