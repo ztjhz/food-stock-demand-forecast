@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import requests # library to handle requests
 import json # library to handle JSON files
 from pandas.io.json import json_normalize # tranform JSON file into a pandas dataframe
+import datetime
 
 
 def main():
@@ -12,8 +13,16 @@ def main():
     process_data(df)
 
 def process_data(df):
-    df = df.sort_values(by="Date")
-    print(df)
+    # sort df by date and drop unused columns
+    # df = df.sort_values(by="Date")
+    df = df.drop(columns=['Member_number'], axis=1)
+    
+    # start_date = df["Date"].iloc[0]
+    # print(start_date)
+    valid_df = df.groupby(by="itemDescription").count().sort_values(by="Date")
+    valid_df = valid_df.drop(valid_df[valid_df.Date < 1000].index)
+    print(valid_df.count())
+    
 
 def read_data_set(file_name):
     df = pd.read_csv(file_name)
