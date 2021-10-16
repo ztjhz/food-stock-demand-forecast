@@ -11,7 +11,7 @@ Food waste is a common problem in Singapore for retail outlets (e.g. supermarket
 
 ## Solution
 To tackle these issues, we will be segmenting the solution into 2 parts: 
-1. Our team came up with this idea of Time Series Forecasting which implements Machine Learning to predict future food demand. Users can input their past sales record over a period of time, and see how much demand for food they can expect and determine how much food to be purchased, minimising potential food wastage.
+1. Our team wants to make use of Time Series Forecasting which implements Machine Learning to predict future food demand. Users can input their past sales record over a period of time, and see how much demand for food they can expect and determine how much food to be purchased, minimising potential food wastage.
 2. Beyond the lowest demand before its expiry date, these products could be donated to families who are in need
 
 ### Time Series Forecasting
