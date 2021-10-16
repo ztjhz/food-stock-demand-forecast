@@ -12,6 +12,10 @@ def main():
     df = load_data_set()
     process_data(df)
 
+def read_data_set(file_name):
+    df = pd.read_csv(file_name)
+    return df
+
 def load_data_set():
     df = read_data_set("Groceries_dataset.csv")
     for i in range(5):
@@ -29,17 +33,13 @@ def process_data(df):
     valid_items_df = df.groupby(by="itemDescription").count().sort_values(by="Date")
     valid_items_df = valid_items_df.drop(valid_items_df[valid_items_df.Date < 5000].index)
     
-    for item in valid_items_df.index:
-        temp_df = df[df.itemDescription == item]
-        # temp_df = temp_df.sort_values(by="Date")
-        temp_df["Date"] = pd.to_datetime(temp_df["Date"])
-        temp_df = temp_df.sort_values(by="Date")
-        # temp_df = pd.to_datetime(temp_df["Date"])
-        print(temp_df.tail())
-        print()
+    # for item in valid_items_df.index:
+        # temp_df = df[df.itemDescription == item]
+    temp_df = df[df.itemDescription == "whole milk"]
+    temp_df["Date"] = pd.to_datetime(temp_df["Date"]) # change date to datetime format
+    temp_df = temp_df.sort_values(by="Date") # sort by date
+    # print(temp_df.tail())
+    print(temp_df.groupby(by="Date").count())
 
-def read_data_set(file_name):
-    df = pd.read_csv(file_name)
-    return df
 
 main()
