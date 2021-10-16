@@ -10,7 +10,7 @@ Food waste is a common problem in Singapore for retail outlets (e.g. supermarket
 2. Some 4.1 per cent of Singaporeans faced moderate to severe food insecurity between 2016 and 2018, according to the State of Food Security and Nutrition in the World 2019 report by the United Nations. A study conducted by the Lien Centre for Social Innovation at the Singapore Management University (SMU) surveyed 236 Singaporeans in four low-income neighbourhoods being served by food support groups. It found that nearly 1 in 5 participants in these areas reported severe food insecurity in 2018. 
 
 ## Solution
-To tackle this issue, we will be segmenting the solution into 2 parts: 
+To tackle these issues, we will be segmenting the solution into 2 parts: 
 1. Our team came up with this idea of Time Series Forecasting which implements Machine Learning to predict future food demand. Users can input their past sales record over a period of time, and see how much demand for food they can expect and determine how much food to be purchased, minimising potential food wastage.
 2. Beyond the lowest demand before its expiry date, these products could be donated to families who are in need
 
