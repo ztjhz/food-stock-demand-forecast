@@ -22,7 +22,6 @@ def load_data_set():
 
 def process_data(df):
     # sort df by date and drop unused columns
-    # df = df.sort_values(by="Date")
     df = df.drop(columns=['Member_number'], axis=1)
     
    
@@ -30,12 +29,15 @@ def process_data(df):
     valid_items_df = df.groupby(by="itemDescription").count().sort_values(by="Date")
     valid_items_df = valid_items_df.drop(valid_items_df[valid_items_df.Date < 5000].index)
     
+    # forecast for each item
     for item in valid_items_df.index:
-        temp_df = df[df.itemDescription == item]
+        temp_df = df[df.itemDescription == item] # get df for each item
         temp_df["Date"] = pd.to_datetime(temp_df["Date"]) # change date to datetime format
         temp_df = temp_df.sort_values(by="Date") # sort by date
-        temp_df = temp_df.groupby(temp_df["Date"]).count()
+        temp_df = temp_df.groupby(temp_df["Date"]).count() # groupby date and see frequency per date
         print(temp_df)
+
+        # forecast item using forecast function implemented
         forecast(temp_df, item)
 
 def plot(temp_df):
@@ -54,10 +56,6 @@ def forecast(my_data, food_label):
     # q (order of moving-average model)
     model = ARIMA(my_data, order=(7, 0, 7))
     results_ARIMA = model.fit()
-
-    # plt.plot(my_data)
-    # plt.plot(results_ARIMA.fittedvalues, color='red')
-    # plt.show()
         
     # predictions_ARIMA_diff = pd.Series(results_ARIMA.fittedvalues, copy=True)
     # print(predictions_ARIMA_diff.tail())
@@ -73,10 +71,15 @@ def forecast(my_data, food_label):
     plt.xlabel("Days Into The Future")
     plt.ylabel("Food Demand")
     # plt.show()
+
+    # save forecasted graph to a folder as png
     plt.savefig("Forecast/{}".format(food_label.replace("/", ",")))
+
+    # reset plt
     plt.clf()
     plt.cla()
     plt.close()
+
     return x
     
 
