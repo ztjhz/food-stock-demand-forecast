@@ -1,10 +1,7 @@
 # importing libraries
 import numpy as np # library to handle data in a vectorized manner
 import pandas as pd # library for data analsysis
-from bs4 import BeautifulSoup
-import requests # library to handle requests
-import json # library to handle JSON files
-from pandas.io.json import json_normalize # tranform JSON file into a pandas dataframe
+import matplotlib.pyplot as plt
 import datetime
 
 
@@ -33,13 +30,48 @@ def process_data(df):
     valid_items_df = df.groupby(by="itemDescription").count().sort_values(by="Date")
     valid_items_df = valid_items_df.drop(valid_items_df[valid_items_df.Date < 5000].index)
     
-    # for item in valid_items_df.index:
-        # temp_df = df[df.itemDescription == item]
-    temp_df = df[df.itemDescription == "whole milk"]
-    temp_df["Date"] = pd.to_datetime(temp_df["Date"]) # change date to datetime format
-    temp_df = temp_df.sort_values(by="Date") # sort by date
-    # print(temp_df.tail())
-    print(temp_df.groupby(by="Date").count())
+    for item in valid_items_df.index:
+        temp_df = df[df.itemDescription == item]
+        temp_df["Date"] = pd.to_datetime(temp_df["Date"]) # change date to datetime format
+        temp_df = temp_df.sort_values(by="Date") # sort by date
+        temp_df = temp_df.groupby(temp_df["Date"]).count()
+        print(temp_df)
+        forecast(temp_df, item)
 
+def plot(temp_df):
+    plt.figure(figsize=(16,8))
+    plt.clf()
+    plt.plot(temp_df['itemDescription'])
+    plt.show()
+
+
+def forecast(my_data, food_label):
+    from statsmodels.tsa.arima.model import ARIMA
+
+    # AR MODEL
+    model = ARIMA(my_data, order=(7, 0, 7))
+    results_ARIMA = model.fit()
+
+    # plt.plot(my_data)
+    # plt.plot(results_ARIMA.fittedvalues, color='red')
+    # plt.show()
+        
+    predictions_ARIMA_diff = pd.Series(results_ARIMA.fittedvalues, copy=True)
+    print(predictions_ARIMA_diff.tail())
+
+    x = results_ARIMA.forecast(steps=30)
+    x.index = np.arange(1, len(x.index) + 1)
+    print(x)
+    plt.plot(x)
+    plt.title(food_label)
+    plt.xlabel("Days Into The Future")
+    plt.ylabel("Food Demand")
+    # plt.show()
+    plt.savefig("Forecast/{}".format(food_label.replace("/", ",")))
+    plt.clf()
+    plt.cla()
+    plt.close()
+    return x
+    
 
 main()
