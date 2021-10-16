@@ -6,13 +6,13 @@ Dataset: https://www.kaggle.com/heeraldedhia/groceries-dataset
 Food waste is a common problem in Singapore for retail outlets (e.g. supermarkets) due to the perishable nature of food. Amount of food waste generated has grown by around 20% over the last 10 years. In 2019, Singapore generated around 744 million kg of food waste. Since they do not know how much food demand to expect in the future, they would stock up excess food as they would not want to disappoint customers due to lack of stock. Hence, the excess perishable stock would be wasted, contributing to the worsening food waste problem in Singapore.
 
 ## Why we want to tackle this issue
-264.2 million people (20%) in sub-Saharan Africa were undernourished and experiencing hunger in 2020. By channeling the surplus of food to other nations who are facing food supply shortages, we reduce the problem of global food wastage. It is a basic human right to have proper access to nutritious food. Hence, we hope that through our idea, we can help divert the food that was supposed to be wasted to people in regions who experience difficulties getting food.
+1. Increasing amount of food waste puts pressure on our resources. We will need to build more waste disposal facilities, such as waste-to-energy plants and landfills for incineration ash. This is not sustainable for land-scarce Singapore. When food is wasted, so are all of the resources used to grow and deliver the food to our tables, as well as to dispose of it. This increases our carbon footprint, contributing to global warming and climate change.
+2. Some 4.1 per cent of Singaporeans faced moderate to severe food insecurity between 2016 and 2018, according to the State of Food Security and Nutrition in the World 2019 report by the United Nations. A study conducted by the Lien Centre for Social Innovation at the Singapore Management University (SMU) surveyed 236 Singaporeans in four low-income neighbourhoods being served by food support groups. It found that nearly 1 in 5 participants in these areas reported severe food insecurity in 2018. 
 
 ## Solution
 To tackle this issue, we will be segmenting the solution into 2 parts: 
-
-1. Our team came up with this idea of Time Series Forecasting which implements Machine Learning to predict future food demand. Users can input their past sales record over a period of time, and see how much demand for food they can expect.
-2. Beyond the lowest demand before its expiry date, these products will be donated to countries facing food supply shortages.
+1. Our team came up with this idea of Time Series Forecasting which implements Machine Learning to predict future food demand. Users can input their past sales record over a period of time, and see how much demand for food they can expect and determine how much food to be purchased, minimising potential food wastage.
+2. Beyond the lowest demand before its expiry date, these products could be donated to families who are in need
 
 ### Time Series Forecasting
 ### Steps Took:
@@ -25,4 +25,9 @@ To tackle this issue, we will be segmenting the solution into 2 parts:
 #### Mobile Application:
 - Users can record and store past sales data over a period of time in an Excel/CSV file
 - A forecast function that uses the above algorithm implemented can be used to forecast the future demand for food
-- Utilising this knowledge, the next batch of food supplied to the user can be adjusted 
+- Utilising this knowledge, the next batch of food supplied to the user can be adjusted hence minimising the probability of excess food purchases
+- Together with that concept, we can determine a threshold before the expiry date so that users can take these food and deliver them to families in need
+
+## References
+https://www.towardszerowaste.gov.sg/foodwaste/
+https://www.channelnewsasia.com/cnainsider/food-insecurity-singapore-hunger-poverty-777806
