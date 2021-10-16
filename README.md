@@ -29,5 +29,5 @@ To tackle this issue, we will be segmenting the solution into 2 parts:
 - Together with that concept, we can determine a threshold before the expiry date so that users can take these food and deliver them to families in need
 
 ## References
-https://www.towardszerowaste.gov.sg/foodwaste/
-https://www.channelnewsasia.com/cnainsider/food-insecurity-singapore-hunger-poverty-777806
+- https://www.towardszerowaste.gov.sg/foodwaste/
+- https://www.channelnewsasia.com/cnainsider/food-insecurity-singapore-hunger-poverty-777806
