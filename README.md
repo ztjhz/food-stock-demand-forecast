@@ -1,4 +1,4 @@
-# food-stock-and-dynamic-pricing
+# Food Stock Demand Forecast
 
 Dataset: https://www.kaggle.com/heeraldedhia/groceries-dataset
 
