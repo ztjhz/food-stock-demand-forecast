@@ -14,3 +14,8 @@ To tackle this issue, our team came up with this idea of Time Series Forecasting
 2. Clean the data and process the data into useable dataframe
 3. Use ARIMA to build a model to forecast future food demand
 4. Plot future food demand in a graph and save it as a png
+
+### How can this be implemented in the real world:
+#### Mobile Application:
+- Users can store past sales data over a period of time
+- A forecast function that uses the above algorithm implemented
