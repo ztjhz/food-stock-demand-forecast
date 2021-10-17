@@ -10,6 +10,9 @@ Pitch Deck: https://github.com/ztjhz/food-stock-demand-forecast/blob/main/Dino%2
 
 Dataset: https://www.kaggle.com/heeraldedhia/groceries-dataset
 
+This project was developed for MLDA Deep Learning Week Hackathon 2021 (16/10/2021 - 17/10/2021)
+Hackathon project link: https://devpost.com/software/food-stock-demand-forecast
+
 ## The Issue
 
 Food waste is a common problem in Singapore for retail outlets (e.g. supermarkets) due to the perishable nature of food. Amount of food waste generated has grown by around 20% over the last 10 years. In 2019, Singapore generated around 744 million kg of food waste. Since they do not know how much food demand to expect in the future, they would stock up excess food as they would not want to disappoint customers due to lack of stock. Hence, the excess perishable stock would be wasted, contributing to the worsening food waste problem in Singapore.
