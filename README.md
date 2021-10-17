@@ -1,5 +1,9 @@
 # Food Stock Demand Forecast
 
+This project was developed for MLDA Deep Learning Week Hackathon 2021 (16/10/2021 - 17/10/2021)
+
+Hackathon project link: https://devpost.com/software/food-stock-demand-forecast
+
 Demo Website: https://ztjhz.github.io/food-stock-demand-forecast/
 
 Demo Video: https://youtu.be/U9Tkbx5ir4M
@@ -9,10 +13,6 @@ Pitch Video: https://youtu.be/Smc3SEaGmCI
 Pitch Deck: https://github.com/ztjhz/food-stock-demand-forecast/blob/main/Dino%20Bots%20Slide%20Deck.pdf
 
 Dataset: https://www.kaggle.com/heeraldedhia/groceries-dataset
-
-This project was developed for MLDA Deep Learning Week Hackathon 2021 (16/10/2021 - 17/10/2021)
-
-Hackathon project link: https://devpost.com/software/food-stock-demand-forecast
 
 ## The Issue
 
