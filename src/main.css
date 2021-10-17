@@ -7,9 +7,10 @@ body {
 #container {
   display: flex;
   width: 1000px;
-  height: 1000px;
+  height: fit-content;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
 }
 
 div {
@@ -20,4 +21,41 @@ h2 {
   text-decoration: underline;
   text-align: center;
   color: #081c15;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.pdf_view {
+  width: inherit;
+  height: 500px;
+  text-align: center;
+}
+
+.pdf_container {
+  width: 1000px;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #081c15;
+}
+a:hover {
+  color: #52b788;
+}
+
+.footer {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  text-align: center;
 }
