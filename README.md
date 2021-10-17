@@ -2,6 +2,8 @@
 
 Demo Website: https://ztjhz.github.io/food-stock-demand-forecast/
 
+Demo Video: https://youtu.be/U9Tkbx5ir4M
+
 Pitch Deck: https://github.com/ztjhz/food-stock-demand-forecast/blob/main/Dino%20Bots%20Slide%20Deck.pdf
 
 Dataset: https://www.kaggle.com/heeraldedhia/groceries-dataset
