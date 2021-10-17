@@ -33,7 +33,7 @@ To tackle these issues, we will be segmenting the solution into 2 parts:
 
 ### How can this be implemented in the real world:
 
-#### Mobile Application:
+#### Web Application:
 
 - Users can record and store past sales data over a period of time in an Excel/CSV file
 - A forecast function that uses the above algorithm implemented can be used to forecast the future demand for food
