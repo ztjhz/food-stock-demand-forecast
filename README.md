@@ -11,6 +11,7 @@ Pitch Deck: https://github.com/ztjhz/food-stock-demand-forecast/blob/main/Dino%2
 Dataset: https://www.kaggle.com/heeraldedhia/groceries-dataset
 
 This project was developed for MLDA Deep Learning Week Hackathon 2021 (16/10/2021 - 17/10/2021)
+
 Hackathon project link: https://devpost.com/software/food-stock-demand-forecast
 
 ## The Issue
