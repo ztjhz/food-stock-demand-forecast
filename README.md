@@ -1,5 +1,9 @@
 # Food Stock Demand Forecast
 
+![Python](http://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=ffffff)
+![Statsmodel](http://img.shields.io/badge/-Statsmodel-3776AB?style=flat-square&logo=python&logoColor=ffffff)
+![JavaScript](https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat-square&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A)
+
 This project was developed for MLDA Deep Learning Week Hackathon 2021 (16/10/2021 - 17/10/2021)
 
 Hackathon project link: https://devpost.com/software/food-stock-demand-forecast
